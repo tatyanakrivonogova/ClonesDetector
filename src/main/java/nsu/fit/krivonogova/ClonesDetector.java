@@ -22,7 +22,7 @@ public class ClonesDetector {
             recvSocket.joinGroup(multicastAddress);
             recvSocket.setSoTimeout(TIMEOUT);
 
-            Map<InetAddress, Long> aliveClones = new HashMap<>();
+            Map<SocketAddress, Long> aliveClones = new HashMap<>();
             DatagramPacket recvPacket = new DatagramPacket(buffer, buffer.length);
 
             launchSender(multicastAddress, sendSocket);
@@ -31,19 +31,19 @@ public class ClonesDetector {
                 try {
                     recvSocket.receive(recvPacket);
 
-                    if (aliveClones.put(recvPacket.getAddress(), System.currentTimeMillis()) == null) {
-                        System.out.println("New clone has joined the group: " + recvPacket.getAddress());
+                    if (aliveClones.put(recvPacket.getSocketAddress(), System.currentTimeMillis()) == null) {
+                        System.out.println("New clone has joined the group: " + recvPacket.getSocketAddress());
                         isNewState = true;
                     }
                 } catch (SocketTimeoutException e) {
                     System.out.println("Connection has lost");
                     break;
                 }
-                for (Map.Entry<InetAddress, Long> clone : aliveClones.entrySet()) {
+                for (Map.Entry<SocketAddress, Long> clone : aliveClones.entrySet()) {
                     if (System.currentTimeMillis() - clone.getValue() > TIMEOUT) {
-                        System.out.println("Clone " + recvPacket.getAddress() + " has left the group");
+                        System.out.println("Clone " + recvPacket.getSocketAddress() + " has left the group");
                         isNewState = true;
-                        aliveClones.remove(recvPacket.getAddress());
+                        aliveClones.remove(recvPacket.getSocketAddress());
                     }
                 }
                 if (isNewState) printAliveClones(aliveClones);
@@ -66,10 +66,10 @@ public class ClonesDetector {
         }, SENDER_DELAY, PERIOD);
     }
 
-    private static void printAliveClones(Map<InetAddress, Long> aliveClones) {
+    private static void printAliveClones(Map<SocketAddress, Long> aliveClones) {
         System.out.println("\n" + aliveClones.size() + " alive clones was detected:");
         int index = 1;
-        for (Map.Entry<InetAddress, Long> clone : aliveClones.entrySet()) {
+        for (Map.Entry<SocketAddress, Long> clone : aliveClones.entrySet()) {
             System.out.println(index + ": " + clone.getKey());
         }
     }
