@@ -2,10 +2,7 @@ package main.java.nsu.fit.krivonogova;
 
 import java.io.IOException;
 import java.net.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class ClonesDetector {
     private static final int PORT = 8888;
@@ -39,11 +36,13 @@ public class ClonesDetector {
                     System.out.println("Connection has lost");
                     break;
                 }
-                for (Map.Entry<SocketAddress, Long> clone : aliveClones.entrySet()) {
+                Iterator<Map.Entry<SocketAddress, Long>> iterator = aliveClones.entrySet().iterator();
+                while (iterator.hasNext()) {
+                    Map.Entry<SocketAddress, Long> clone = iterator.next();
                     if (System.currentTimeMillis() - clone.getValue() > TIMEOUT) {
                         System.out.println("Clone " + recvPacket.getSocketAddress() + " has left the group");
                         isNewState = true;
-                        aliveClones.remove(recvPacket.getSocketAddress());
+                        iterator.remove();
                     }
                 }
                 if (isNewState) printAliveClones(aliveClones);
@@ -71,6 +70,7 @@ public class ClonesDetector {
         int index = 1;
         for (Map.Entry<SocketAddress, Long> clone : aliveClones.entrySet()) {
             System.out.println(index + ": " + clone.getKey());
+            ++index;
         }
     }
 }
