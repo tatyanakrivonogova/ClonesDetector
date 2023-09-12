@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="replace InetAddress by SocketAddress">
+    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="fixed updating of alive clones map">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" afterDir="false" />
     </list>
@@ -21,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,14 +43,15 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.clone3">
+  <component name="RunManager" selected="Application.clone1">
     <configuration name="clone1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="FF02::1" />
+      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -53,7 +59,7 @@
     <configuration name="clone2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="FF02::1" />
+      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,7 +67,7 @@
     <configuration name="clone3" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="FF02::1" />
+      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,12 +101,20 @@
       <option name="project" value="LOCAL" />
       <updated>1694109921269</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed updating of alive clones map">
+      <created>1694143146700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694143146700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="does not work with mc-address 224.0.0.1, but works with 224.0.0.0" />
     <MESSAGE value="replace InetAddress by SocketAddress" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace InetAddress by SocketAddress" />
+    <MESSAGE value="fixed updating of alive clones map" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed updating of alive clones map" />
   </component>
 </project>
