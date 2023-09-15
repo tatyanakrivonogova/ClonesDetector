@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="fixed updating of alive clones map">
+    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="it must work">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/NetworkInterfaceGetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +49,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.clone1">
+  <component name="RunManager" selected="Application.clone2">
     <configuration name="clone1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
+      <option name="PROGRAM_PARAMETERS" value="224.0.0.0 192.168.78.109" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -59,7 +61,7 @@
     <configuration name="clone2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
+      <option name="PROGRAM_PARAMETERS" value="224.0.0.0 192.168.78.109" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,7 +69,7 @@
     <configuration name="clone3" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
-      <option name="PROGRAM_PARAMETERS" value="230.0.0.0" />
+      <option name="PROGRAM_PARAMETERS" value="224.0.0.0 192.168.78.109" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,13 +110,37 @@
       <option name="project" value="LOCAL" />
       <updated>1694143146700</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="it must work">
+      <created>1694518888633</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694518888633</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="does not work with mc-address 224.0.0.1, but works with 224.0.0.0" />
     <MESSAGE value="replace InetAddress by SocketAddress" />
     <MESSAGE value="fixed updating of alive clones map" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed updating of alive clones map" />
+    <MESSAGE value="it must work" />
+    <option name="LAST_COMMIT_MESSAGE" value="it must work" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

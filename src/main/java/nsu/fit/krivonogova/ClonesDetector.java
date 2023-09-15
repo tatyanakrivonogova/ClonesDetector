@@ -5,23 +5,36 @@ import java.net.*;
 import java.util.*;
 
 public class ClonesDetector {
-    private static final int PORT = 8888;
+    private static final int PORT = 1234;
     private static final int PERIOD = 1000;
     private static final int TIMEOUT = 2*PERIOD;
     private static final int SENDER_DELAY = 0;
-    private static final byte[] buffer = "i am alive".getBytes(); //array of bytes for receiving messages
-    private static final Timer sendTimer = new Timer(true); //timer with daemon flag, main thread will not wait for timer's exiting
-    public static void detectClones(InetAddress multicastAddress) {
+    private static final byte[] buffer = "i am alive".getBytes();
+    private static final Timer sendTimer = new Timer(true);
+    public static void detectClones(String multicastAddress) {
+        InetAddress multicastInetAddress;
+        try {
+            multicastInetAddress = InetAddress.getByName(multicastAddress);
+        } catch (UnknownHostException e) {
+            System.out.println("Multicast address is incorrect");
+            multicastInetAddress = null;
+        }
+
+
         try (MulticastSocket recvSocket = new MulticastSocket(PORT);
              DatagramSocket sendSocket = new DatagramSocket()) {
 
-            recvSocket.joinGroup(multicastAddress);
+            NetworkInterface myNetInt = NetworkInterfaceGetter.getNetworkInterface("wlan1");
+            if (myNetInt != null) recvSocket.setNetworkInterface(myNetInt);
+            else System.out.println("MyNetInt = null");
+
+            recvSocket.joinGroup(multicastInetAddress);
             recvSocket.setSoTimeout(TIMEOUT);
 
             Map<InetSocketAddress, Long> aliveClones = new HashMap<>();
             DatagramPacket packetForReceiving = new DatagramPacket(buffer, buffer.length);
 
-            launchSender(multicastAddress, sendSocket);
+            launchSender(multicastInetAddress, sendSocket);
 
             while (true) {
                 boolean hasUpdated = false;
@@ -66,10 +79,10 @@ public class ClonesDetector {
     }
 
     private static void printAliveClones(Map<InetSocketAddress, Long> aliveClones) {
-        System.out.println("\n" + aliveClones.size() + " alive clones was detected:");
+        System.out.println("\n" + aliveClones.size() + " alive clones were detected:");
         int index = 1;
         for (Map.Entry<InetSocketAddress, Long> clone : aliveClones.entrySet()) {
-            System.out.println(index + ": " + clone.getKey());
+            System.out.println(index + ": " + clone.getKey().toString().split("/")[1]);
             ++index;
         }
     }
