@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="it must work">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/NetworkInterfaceGetter.java" afterDir="false" />
+    <list default="true" id="91759571-0645-4593-b8be-8991b6d5785a" name="Changes" comment="added setNetworkInterface for the multicast socket">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/ClonesDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +47,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.clone2">
+  <component name="RunManager" selected="Application.clone3">
     <configuration name="clone1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.nsu.fit.krivonogova.Main" />
       <module name="ClonesDetector" />
@@ -117,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694518888633</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added setNetworkInterface for the multicast socket">
+      <created>1694747038073</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694747038073</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,14 +130,15 @@
     <MESSAGE value="replace InetAddress by SocketAddress" />
     <MESSAGE value="fixed updating of alive clones map" />
     <MESSAGE value="it must work" />
-    <option name="LAST_COMMIT_MESSAGE" value="it must work" />
+    <MESSAGE value="added setNetworkInterface for the multicast socket" />
+    <option name="LAST_COMMIT_MESSAGE" value="added setNetworkInterface for the multicast socket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/nsu/fit/krivonogova/Main.java</url>
-          <line>6</line>
+          <line>3</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

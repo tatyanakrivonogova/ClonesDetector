@@ -53,7 +53,7 @@ public class ClonesDetector {
                 while (iterator.hasNext()) {
                     Map.Entry<InetSocketAddress, Long> clone = iterator.next();
                     if (System.currentTimeMillis() - clone.getValue() > TIMEOUT) {
-                        System.out.println("Clone " + packetForReceiving.getSocketAddress() + " has left the group");
+                        System.out.println("Clone " + clone.getKey() + " has left the group");
                         hasUpdated = true;
                         iterator.remove();
                     }
